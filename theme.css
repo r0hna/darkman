@@ -1,0 +1,174 @@
+/* ==================================== */
+/* 1. DEEP ZENITH V1 COLOR VARIABLES */
+/* ==================================== */
+:root {
+    /* --- DARK BACKGROUNDS (SOFTER & LIGHTER) --- */
+    --main-bg-dark-x:          46,46,46;  /* #2e2e2e - New, softer medium dark gray */
+    --main-bg-dark:            rgb(var(--main-bg-dark-x));
+    --sec-bg-dark-x:           42,42,42;  /* #2a2a2a - New, softer medium dark gray for sidebars */
+    --sec-bg-dark:             rgb(var(--sec-bg-dark-x));
+    --bg-border-x:             68,68,68;  /* #444444 - Slightly lighter borders for separation */
+    --bg-border:               rgb(var(--bg-border-x));
+    --bg-hover-x:              75,75,75;  /* #4b4b4b - Adjusted hover effect */
+    --bg-hover:                rgb(var(--bg-hover-x));
+
+    /* --- LIGHT BACKGROUNDS (Unchanged from V5) --- */
+    --light-bg0-x:             245,245,245; /* #f5f5f5 - Off-white primary */
+    --light-bg0:               rgb(var(--light-bg0-x));
+    --light-bg1-x:             232,232,232; /* #e8e8e8 - Slightly darker secondary/sidebar */
+    --light-bg1:               rgb(var(--light-bg1-x));
+    --light-bg-border-x:       200,200,200; /* #c8c8c8 - Light border */
+    --light-bg-border:         rgb(var(--light-bg-border-x));
+
+    /* --- TEXT (Slightly Brighter) --- */
+    --text-light-x:            237,237,237; /* #ededed */
+    --text-light:              rgb(var(--text-light-x));
+    --text-dark-x:             30,30,30;  /* #1e1e1e - Very dark gray on Light Mode */
+    --text-dark:               rgb(var(--text-dark-x));
+    --text-faint-x:            169,169,169; /* #a9a9a9 */
+    --text-faint:              rgb(var(--text-faint-x));
+
+    /* --- ACCENTS (Unchanged from V5) --- */
+    --accent-primary-x:        255,180,110; /* #ffb46e - Primary: Muted Orange/Gold */
+    --accent-primary:          rgb(var(--accent-primary-x));
+    --accent-secondary-x:      131,230,255; /* #83e6ff - Secondary: Soft Teal/Light Blue */
+    --accent-secondary:        rgb(var(--accent-secondary-x));
+    --accent-tertiary-x:       180,142,173; /* #b48ead - Tertiary: Muted Purple/Rose */
+    --accent-tertiary:         rgb(var(--accent-tertiary-x));
+    --h1-color-x:              255,107,107; /* #ff6b6b - Red-Orange for H1 */
+    --h1-color-main:           rgb(var(--h1-color-x));
+    --accent-red-x:            255,107,107; /* #ff6b6b - Error/Danger Red */
+    --accent-red:              rgb(var(--accent-red-x));
+}
+
+/* ==================================== */
+/* 2. GENERAL STYLING */
+/* ==================================== */
+body {
+    --interactive-accent:      var(--accent-primary);
+    --interactive-accent-rgb:  var(--accent-primary-x);
+    --link-color:              var(--accent-primary);
+    --link-hover-color:        var(--accent-secondary);
+    --text-accent:             var(--accent-primary);
+    --text-accent-hover:       var(--accent-secondary);
+    --tag-color:               #88624E;
+    --tag-background:          rgba(136, 98, 78, 0.2);
+    --tag-radius:              4px;
+    --tag-padding-x:           .4em;
+    --tag-padding-y:           .1em;
+    --tag-decoration:          none;
+    --bold-weight:             700;
+    --tab-font-weight:         500;
+}
+
+/* ==================================== */
+/* 3. DARK THEME APPLICATION (.theme-dark) */
+/* ==================================== */
+.theme-dark {
+    /* 🔑 --- LIGHTER BACKGROUNDS APPLIED --- */
+    --background-primary:            var(--main-bg-dark);
+    --background-primary-alt:        var(--main-bg-dark);
+    --background-secondary:          var(--sec-bg-dark);
+    --background-secondary-alt:      var(--sec-bg-dark);
+
+    /* --- TEXT & BORDERS --- */
+    --text-normal:                   var(--text-light);
+    --text-muted:                    var(--text-faint);
+    --text-faint:                    var(--text-faint);
+    --text-highlight-bg:             rgba(var(--accent-secondary-x), 0.2);
+    --background-modifier-border:    var(--bg-border);
+    --hr-color:                      var(--bg-border);
+
+    /* --- DIVERSE, PROGRESSIVE HEADERS --- */
+    --h1-color:                      var(--h1-color-main); 
+    --h2-color:                      var(--accent-secondary);
+    --h3-color:                      var(--accent-tertiary);
+    --h4-color:                      var(--accent-primary);
+    --h5-color:                      var(--accent-secondary);
+    --h6-color:                      var(--accent-tertiary);
+
+    /* --- BOLD/ITALIC --- */
+    --bold-color:                    var(--accent-secondary);
+    --italic-color:                  var(--accent-secondary);
+
+    /* --- TABLES & CODE BLOCKS --- */
+    --table-header-background:       var(--sec-bg-dark);
+    --table-row-even-background:     var(--main-bg-dark);
+    --table-row-odd-background:      var(--sec-bg-dark);
+    --table-row-background-hover:    var(--bg-hover);
+    --code-normal:                   var(--text-faint);
+    --code-background:               var(--sec-bg-dark);
+    --code-block-background:         var(--sec-bg-dark);
+
+    /* --- SELECTION & CURSOR --- */
+    --text-selection:                rgba(var(--accent-secondary-x), 0.25);
+    --cursor-line-background:        rgba(var(--bg-hover-x), 0.5);
+    --checkbox-color:                var(--accent-secondary);
+    --checkbox-border-color:         var(--accent-secondary);
+}
+
+/* ==================================== */
+/* 4. LIGHT THEME APPLICATION (.theme-light) */
+/* (Unchanged from V5) */
+/* ==================================== */
+.theme-light {
+    --background-primary:            var(--light-bg0);
+    --background-primary-alt:        var(--light-bg0);
+    --background-secondary:          var(--light-bg1);
+    --background-secondary-alt:      var(--light-bg1);
+    
+    --text-normal:                   var(--text-dark);
+    --text-muted:                    var(--text-faint);
+    --text-faint:                    var(--text-faint);
+    --text-highlight-bg:             rgba(255,180,110, 0.3);
+
+    --background-modifier-border:    var(--light-bg-border);
+    --hr-color:                      var(--light-bg-border);
+
+    --h1-color:                      var(--h1-color-main); 
+    --h2-color:                      var(--text-dark);
+    --h3-color:                      var(--text-dark);
+    --h4-color:                      var(--text-dark);
+    --h5-color:                      var(--text-faint);
+    --h6-color:                      var(--text-faint);
+    
+    --bold-color:                    var(--text-dark);
+    --italic-color:                  var(--text-dark);
+
+    --table-header-background:       var(--light-bg1);
+    --table-row-even-background:     var(--light-bg0);
+    --table-row-odd-background:      var(--light-bg1);
+    --table-row-background-hover:    var(--light-bg-border);
+    --code-normal:                   var(--text-dark);
+    --code-background:               var(--light-bg1);
+    --code-block-background:         var(--light-bg1);
+
+    --text-selection:                rgba(255,180,110, 0.4); 
+    --cursor-line-background:        rgba(var(--light-bg-border-x), 0.4);
+    --checkbox-color:                var(--accent-primary);
+    --checkbox-border-color:         var(--accent-primary);
+}
+
+/* ==================================== */
+/* 5. ELEMENT SPECIFIC TWEAKS (Universal) */
+/* ==================================== */
+table, thead, th, td {
+    border-color: var(--background-modifier-border) !important;
+}
+
+.cm-strong {
+    color: var(--bold-color) !important;
+}
+.cm-em {
+    color: var(--italic-color) !important;
+}
+.cm-strong.cm-em {
+    color: var(--accent-primary) !important;
+}
+
+.markdown-source-view.mod-cm6 .cm-line:not(.HyperMD-table-row) .cm-inline-code,
+.markdown-rendered code {
+    color: var(--code-normal);
+    background-color: var(--code-background);
+    border: 1px solid var(--background-modifier-border);
+}
