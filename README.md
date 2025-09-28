@@ -1,0 +1,2 @@
+# darkman
+Obsidian theme
